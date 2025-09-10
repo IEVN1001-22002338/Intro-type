@@ -1,0 +1,33 @@
+class Persona3{
+    // public amaterno:string;
+    // private apaterno:string;
+    protected nombre1:string;
+    protected edad:number
+    protected direccion:string;
+    constructor(nombre1:string, edad:number,direccion:string){
+        this.nombre1=nombre1;
+        this.edad=edad;
+        this.direccion=direccion;
+    }
+
+    mostrarPersonas(){
+        console.log(`Nombre: ${this.nombre1},
+            Edad: ${this.edad},
+            Direccion: ${this.direccion}`)
+    }
+}
+
+class Empleado3 extends Persona3{
+        private sueldo:number;
+        constructor(nombre1:string,edad:number,direccion:string,sueldo:number){
+            super(nombre1,edad,direccion);
+            this.sueldo=sueldo;
+        }
+
+        mostrarEmpleado(){
+            this.mostrarPersonas();
+            console.log(`Sueldo: ${this.sueldo}`)
+        }
+    }
+const empleado3 = new Empleado3("Ana",28,"Calle Falsa 123",2000);
+empleado3.mostrarEmpleado();
